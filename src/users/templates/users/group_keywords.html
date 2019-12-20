@@ -1,0 +1,62 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--	<ul>-->
+<!--	  {% for word in words %}-->
+<!--		<li>{{ word }}</li>-->
+<!--	  {% endfor %}-->
+<!--	</ul>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<script>
+var json={{ test_data | safe }}
+$(document).ready(function() {
+    $('#example').DataTable( {
+        data: json.data,
+        "columns": [
+            { "data": "keyword" },
+            { "data": "group_id" },
+            { "data": "priority" },
+            { "data": "similar_keywords" }
+        ]
+    } );
+} );
+</script>
+</head>
+
+<body>
+
+<table id="example" class="display" width="100%">
+	 <thead>
+            <tr>
+                <th>Keyword</th>
+                <th>Group</th>
+				<th>PRIORITY</th>
+                <th>SIMILAR WORDS</th>
+<!--                <th>Office</th>-->
+<!--                <th>Extn.</th>-->
+<!--                <th>Start date</th>-->
+<!--                <th>Salary</th>-->
+            </tr>
+        </thead>
+</table>
+</body>
+</html>
+
+

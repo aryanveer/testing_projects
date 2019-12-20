@@ -1,0 +1,1 @@
+gunicorn --bind unix:/home/ubuntu/Desktop/testing_projects/src/hydra.sock hydra.wsgi
